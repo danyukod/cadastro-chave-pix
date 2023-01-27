@@ -20,7 +20,7 @@ public class CnpjPixKeyRegistration implements PixKeyRegistration {
     }
 
     @Override
-    public boolean formatValidate() {
+    public boolean formatValidate(String PixKey) {
         return false;
     }
 }

@@ -8,6 +8,6 @@ public interface PixKeyRegistration {
 
     boolean quantityValidate();
 
-    boolean formatValidate();
+    boolean formatValidate(String PixKey);
 
 }

@@ -19,7 +19,7 @@ public class CpfPixKeyRegistration implements PixKeyRegistration {
     }
 
     @Override
-    public boolean formatValidate() {
+    public boolean formatValidate(String PixKey) {
         return false;
     }
 }

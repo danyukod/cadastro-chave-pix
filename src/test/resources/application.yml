@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: test
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  jackson:
+    default-property-inclusion: non_null
+  datasource:
+    url:
+    username:
+    password:
+
