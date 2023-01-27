@@ -1,4 +1,4 @@
-package br.com.itau.cadastrochavepix.service;
+package br.com.itau.cadastrochavepix.entities.modification;
 
 public class PixKeyModification {
 

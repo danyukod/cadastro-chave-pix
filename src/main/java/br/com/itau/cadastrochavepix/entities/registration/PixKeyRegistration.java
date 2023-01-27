@@ -1,4 +1,4 @@
-package br.com.itau.cadastrochavepix.service.registration;
+package br.com.itau.cadastrochavepix.entities.registration;
 
 public interface PixKeyRegistration {
 

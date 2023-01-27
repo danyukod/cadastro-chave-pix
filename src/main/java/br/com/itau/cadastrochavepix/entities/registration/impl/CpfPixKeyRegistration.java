@@ -1,6 +1,6 @@
-package br.com.itau.cadastrochavepix.service.registration.impl;
+package br.com.itau.cadastrochavepix.entities.registration.impl;
 
-import br.com.itau.cadastrochavepix.service.registration.PixKeyRegistration;
+import br.com.itau.cadastrochavepix.entities.registration.PixKeyRegistration;
 
 public class CpfPixKeyRegistration implements PixKeyRegistration {
     @Override
