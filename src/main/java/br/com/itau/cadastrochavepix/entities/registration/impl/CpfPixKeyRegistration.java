@@ -9,16 +9,6 @@ public class CpfPixKeyRegistration implements PixKeyRegistration {
     }
 
     @Override
-    public boolean pixKeyNumberValidate() {
-        return false;
-    }
-
-    @Override
-    public boolean quantityValidate() {
-        return false;
-    }
-
-    @Override
     public boolean formatValidate(String PixKey) {
         return false;
     }

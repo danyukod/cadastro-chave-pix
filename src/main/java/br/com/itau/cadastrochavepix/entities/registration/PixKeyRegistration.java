@@ -4,10 +4,6 @@ public interface PixKeyRegistration {
 
     void inclusion();
 
-    boolean pixKeyNumberValidate();
-
-    boolean quantityValidate();
-
     boolean formatValidate(String PixKey);
 
 }
