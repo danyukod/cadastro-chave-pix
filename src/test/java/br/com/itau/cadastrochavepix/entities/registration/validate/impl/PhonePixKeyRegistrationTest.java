@@ -1,7 +1,8 @@
-package br.com.itau.cadastrochavepix.entities.registration.impl;
+package br.com.itau.cadastrochavepix.entities.registration.validate.impl;
 
 import br.com.itau.cadastrochavepix.entities.registration.validate.impl.PhonePixKeyRegistrationValidate;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -12,11 +13,13 @@ class PhonePixKeyRegistrationTest {
     PhonePixKeyRegistrationValidate phonePixKeyRegistration;
 
     @BeforeEach
+    @DisplayName("Create new instance of PhonePixKeyRegistrationValidate")
     void setUp(){
         phonePixKeyRegistration = new PhonePixKeyRegistrationValidate();
     }
 
     @Test
+    @DisplayName("Given a valid phone number should return true")
     void givenAValidPhoneNumberShouldReturnTrue() {
         String phoneNumber = "+5515999999999";
         boolean result = phonePixKeyRegistration.formatValidate(phoneNumber);
@@ -25,6 +28,7 @@ class PhonePixKeyRegistrationTest {
     }
 
     @Test
+    @DisplayName("Given a invalid phone number should return false")
     void givenAInvalidPhoneNumberShouldReturnFalse() {
         String phoneNumberWithoutPlus = "5515999999999";
         String phoneNumberLessDigits = "+551599999999";
