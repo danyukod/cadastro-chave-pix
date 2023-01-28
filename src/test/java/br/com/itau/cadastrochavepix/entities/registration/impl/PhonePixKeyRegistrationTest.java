@@ -1,5 +1,6 @@
 package br.com.itau.cadastrochavepix.entities.registration.impl;
 
+import br.com.itau.cadastrochavepix.entities.registration.validate.impl.PhonePixKeyRegistrationValidate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PhonePixKeyRegistrationTest {
 
-    PhonePixKeyRegistration phonePixKeyRegistration;
+    PhonePixKeyRegistrationValidate phonePixKeyRegistration;
 
     @BeforeEach
     void setUp(){
-        phonePixKeyRegistration = new PhonePixKeyRegistration();
+        phonePixKeyRegistration = new PhonePixKeyRegistrationValidate();
     }
 
     @Test
