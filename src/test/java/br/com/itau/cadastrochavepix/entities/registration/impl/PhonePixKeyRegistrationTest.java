@@ -27,15 +27,17 @@ class PhonePixKeyRegistrationTest {
     void givenAInvalidPhoneNumberShouldReturnFalse() {
         String phoneNumberWithoutPlus = "5515999999999";
         String phoneNumberLessDigits = "+551599999999";
-        String phoneNumberHighestDigits = "+551599999999";
+        String phoneNumberHighestDigits = "+55159999999999";
+        String phoneNumberWithLetter = "+551599999A999";
         boolean resultWithoutPlus = phonePixKeyRegistration.formatValidate(phoneNumberWithoutPlus);
         boolean resultLessDigits = phonePixKeyRegistration.formatValidate(phoneNumberLessDigits);
         boolean resultHighestDigits = phonePixKeyRegistration.formatValidate(phoneNumberHighestDigits);
-
+        boolean resultWithLetter = phonePixKeyRegistration.formatValidate(phoneNumberWithLetter);
 
         assertFalse(resultWithoutPlus);
         assertFalse(resultLessDigits);
         assertFalse(resultHighestDigits);
+        assertFalse(resultWithLetter);
     }
 
 
