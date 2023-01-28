@@ -1,6 +1,5 @@
 package br.com.itau.cadastrochavepix.entities.registration.validate.impl;
 
-import br.com.itau.cadastrochavepix.entities.registration.validate.impl.PhonePixKeyRegistrationValidate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,35 +13,30 @@ class PhonePixKeyRegistrationTest {
 
     @BeforeEach
     @DisplayName("Create new instance of PhonePixKeyRegistrationValidate")
-    void setUp(){
+    void setUp() {
         phonePixKeyRegistration = new PhonePixKeyRegistrationValidate();
     }
 
     @Test
     @DisplayName("Given a valid phone number should return true")
     void givenAValidPhoneNumberShouldReturnTrue() {
-        String phoneNumber = "+5515999999999";
-        boolean result = phonePixKeyRegistration.formatValidate(phoneNumber);
+        var phoneNumber = "+5515999999999";
 
-        assertTrue(result);
+        assertTrue(phonePixKeyRegistration.formatValidate(phoneNumber));
     }
 
     @Test
     @DisplayName("Given a invalid phone number should return false")
     void givenAInvalidPhoneNumberShouldReturnFalse() {
-        String phoneNumberWithoutPlus = "5515999999999";
-        String phoneNumberLessDigits = "+551599999999";
-        String phoneNumberHighestDigits = "+55159999999999";
-        String phoneNumberWithLetter = "+551599999A999";
-        boolean resultWithoutPlus = phonePixKeyRegistration.formatValidate(phoneNumberWithoutPlus);
-        boolean resultLessDigits = phonePixKeyRegistration.formatValidate(phoneNumberLessDigits);
-        boolean resultHighestDigits = phonePixKeyRegistration.formatValidate(phoneNumberHighestDigits);
-        boolean resultWithLetter = phonePixKeyRegistration.formatValidate(phoneNumberWithLetter);
+        var phoneNumberWithoutPlus = "5515999999999";
+        var phoneNumberLessDigits = "+551599999999";
+        var phoneNumberHighestDigits = "+55159999999999";
+        var phoneNumberWithLetter = "+551599999A999";
 
-        assertFalse(resultWithoutPlus);
-        assertFalse(resultLessDigits);
-        assertFalse(resultHighestDigits);
-        assertFalse(resultWithLetter);
+        assertFalse(phonePixKeyRegistration.formatValidate(phoneNumberWithoutPlus));
+        assertFalse(phonePixKeyRegistration.formatValidate(phoneNumberLessDigits));
+        assertFalse(phonePixKeyRegistration.formatValidate(phoneNumberHighestDigits));
+        assertFalse(phonePixKeyRegistration.formatValidate(phoneNumberWithLetter));
     }
 
 
