@@ -1,10 +1,8 @@
 package br.com.itau.cadastrochavepix.entities.deletion;
 
-public class PixKeyDeletion {
-    void deletion() {
-    };
+public interface PixKeyDeletion {
+    void deletion();
 
-    void validateEnablePixKey() {
-    };
+    void validateEnablePixKey();
 
 }

@@ -1,12 +1,9 @@
 package br.com.itau.cadastrochavepix.entities.registration.inclusion;
 
-import br.com.itau.cadastrochavepix.models.requests.PixKeyRequest;
+import br.com.itau.cadastrochavepix.models.requests.PixKeyRegisterRequest;
+import br.com.itau.cadastrochavepix.models.responses.PixKeyRegisterResponse;
 
 public interface PixKeyInclusion {
-    public void inclusion(PixKeyRequest request);
-
-    boolean verifyEqualsPixKeyNumber();
-
-    boolean verifyPixKeyQuantity();
+    public PixKeyRegisterResponse inclusion(PixKeyRegisterRequest request);
 
 }

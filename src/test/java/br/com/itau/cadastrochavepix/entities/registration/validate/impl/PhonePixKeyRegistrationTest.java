@@ -20,18 +20,24 @@ class PhonePixKeyRegistrationTest {
     @Test
     @DisplayName("Given a valid phone number should return true")
     void givenAValidPhoneNumberShouldReturnTrue() {
-        var phoneNumber = "+5515999999999";
+        var phoneNumberValidateElevenDigits = "+51999999999";
+        var phoneNumberValidateTwelveDigits = "+551999999999";
+        var phoneNumberValidateThirteenDigits = "+5511999999999";
+        var phoneNumberValidateFourteenDigits = "+55111999999999";
 
-        assertTrue(phonePixKeyRegistration.formatValidate(phoneNumber));
+        assertTrue(phonePixKeyRegistration.formatValidate(phoneNumberValidateElevenDigits));
+        assertTrue(phonePixKeyRegistration.formatValidate(phoneNumberValidateTwelveDigits));
+        assertTrue(phonePixKeyRegistration.formatValidate(phoneNumberValidateThirteenDigits));
+        assertTrue(phonePixKeyRegistration.formatValidate(phoneNumberValidateFourteenDigits));
     }
 
     @Test
     @DisplayName("Given a invalid phone number should return false")
     void givenAInvalidPhoneNumberShouldReturnFalse() {
         var phoneNumberWithoutPlus = "5515999999999";
-        var phoneNumberLessDigits = "+551599999999";
-        var phoneNumberHighestDigits = "+55159999999999";
-        var phoneNumberWithLetter = "+551599999A999";
+        var phoneNumberLessDigits = "+5515999999";
+        var phoneNumberHighestDigits = "+551599999999999";
+        var phoneNumberWithLetter = "+5515999AAA999";
 
         assertFalse(phonePixKeyRegistration.formatValidate(phoneNumberWithoutPlus));
         assertFalse(phonePixKeyRegistration.formatValidate(phoneNumberLessDigits));
