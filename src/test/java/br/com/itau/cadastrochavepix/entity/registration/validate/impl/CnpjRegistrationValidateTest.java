@@ -18,7 +18,7 @@ class CnpjRegistrationValidateTest {
     @Test
     @DisplayName("Given a valid cnpj then should return true")
     void givenAValidCnpjThenShouldReturnTrue() {
-        var cnpj = "39357160876";
+        var cnpj = "52323817000102";
 
         assertTrue(cnpjRegistrationValidate.formatValidate(cnpj));
     }
@@ -26,11 +26,11 @@ class CnpjRegistrationValidateTest {
     @Test
     @DisplayName("Given a invalid cnpj then should return false")
     void givenAInvalidCnpjThenShouldReturnFalse() {
-        var invalidCnpjNumber = "12345678910";
-        var cnpjWithMoreThanElevenDigits = "1234567891011";
+        var invalidCnpjNumber = "12345678910112";
+        var cnpjWithMoreThanFourteenDigits = "123456789101112";
 
 
         assertFalse(cnpjRegistrationValidate.formatValidate(invalidCnpjNumber));
-        assertFalse(cnpjRegistrationValidate.formatValidate(cnpjWithMoreThanElevenDigits));
+        assertFalse(cnpjRegistrationValidate.formatValidate(cnpjWithMoreThanFourteenDigits));
     }
 }
