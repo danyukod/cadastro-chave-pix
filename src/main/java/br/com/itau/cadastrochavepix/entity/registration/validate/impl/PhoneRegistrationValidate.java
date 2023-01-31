@@ -9,11 +9,11 @@ public class PhoneRegistrationValidate implements RegistrationValidate {
     private static Pattern regexPatternPhoneNumber = Pattern.compile("\\+((\\d{11,14}))");
 
     @Override
-    public boolean formatValidate(String PixPhoneNumber) {
-        if (PixPhoneNumber == null) {
+    public boolean formatValidate(String pixKey) {
+        if (pixKey == null) {
             return false;
         }
-        return regexPatternPhoneNumber.matcher(PixPhoneNumber).matches();
+        return regexPatternPhoneNumber.matcher(pixKey).matches();
     }
 
 }

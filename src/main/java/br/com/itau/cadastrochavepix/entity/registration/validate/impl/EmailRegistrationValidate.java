@@ -6,15 +6,15 @@ public class EmailRegistrationValidate implements RegistrationValidate {
 
     public static final int MIN_EMAIL_LENGTH = 3;
     public static final int MAX_EMAIL_LENGHT = 77;
-    private static String emailRegex = "^[A-Za-z0-9+_.-]+@(.+)$";
+    private static String regexPatternEmail = "^[A-Za-z0-9+_.-]+@(.+)$";
 
 
     @Override
-    public boolean formatValidate(String PixKey) {
-        if (PixKey == null) {
+    public boolean formatValidate(String pixKey) {
+        if (pixKey == null) {
             return false;
         }
-        return PixKey.matches(emailRegex) && verifyLength(PixKey);
+        return pixKey.matches(regexPatternEmail) && verifyLength(pixKey);
     }
 
     private boolean verifyLength(String PixKey) {
