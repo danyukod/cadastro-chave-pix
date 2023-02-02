@@ -1,41 +1,41 @@
 package br.com.itau.cadastrochavepix.model.enums;
 
-import br.com.itau.cadastrochavepix.entity.registration.validate.RegistrationValidate;
-import br.com.itau.cadastrochavepix.entity.registration.validate.impl.*;
+import br.com.itau.cadastrochavepix.domain.validation.RegistrationValidation;
+import br.com.itau.cadastrochavepix.domain.validation.impl.*;
 
 public enum PixKeyType {
     //Strategy pattern && Factory pattern
     CPF {
         @Override
-        public RegistrationValidate validateFactory() {
-            return new CpfRegistrationValidate();
+        public RegistrationValidation validateFactory() {
+            return new CpfValidate();
         }
     },
     CNPJ {
         @Override
-        public RegistrationValidate validateFactory() {
-            return new CnpjRegistrationValidate();
+        public RegistrationValidation validateFactory() {
+            return new CnpjValidate();
         }
     },
     PHONE {
         @Override
-        public RegistrationValidate validateFactory() {
-            return new PhoneRegistrationValidate();
+        public RegistrationValidation validateFactory() {
+            return new PhoneValidate();
         }
     },
     EMAIL {
         @Override
-        public RegistrationValidate validateFactory() {
-            return new EmailRegistrationValidate();
+        public RegistrationValidation validateFactory() {
+            return new EmailValidate();
         }
     },
     RANDOM {
         @Override
-        public RegistrationValidate validateFactory() {
-            return new RandomRegistrationValidate();
+        public RegistrationValidation validateFactory() {
+            return new RandomValidate();
         }
     };
 
-    public abstract RegistrationValidate validateFactory();
+    public abstract RegistrationValidation validateFactory();
 
 }
