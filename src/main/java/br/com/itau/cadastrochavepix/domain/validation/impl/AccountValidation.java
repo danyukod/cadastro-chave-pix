@@ -1,12 +1,16 @@
 package br.com.itau.cadastrochavepix.domain.validation.impl;
 
+import br.com.itau.cadastrochavepix.model.requests.PixKeyRequest;
+
 public class AccountValidation {
 
-    public boolean accountValidate(String accountType, Integer agencyNumber, Integer accountNumber) {
-        if (accountType == null || agencyNumber == null || accountNumber == null) {
+    public boolean accountValidate(PixKeyRequest pixKeyRequest) {
+        if (pixKeyRequest == null) {
             return false;
         }
-        return validateAccountType(accountType) && validateAgencyNumber(agencyNumber) && validateAccountNumber(accountNumber);
+        return validateAccountType(pixKeyRequest.accountType())
+                && validateAgencyNumber(pixKeyRequest.agencyNumber())
+                && validateAccountNumber(pixKeyRequest.accountNumber());
     }
 
     private boolean validateAccountType(String accountType) {

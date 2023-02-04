@@ -13,7 +13,7 @@ public record PixKeyRegisterRequest(
         Integer accountNumber,
         String accountHolderName,
         String accountHolderLastName
-) {
+) implements PixKeyRequest {
     @Override
     public String pixKey() {
         if (pixKeyType.equals(PixKeyType.RANDOM))
