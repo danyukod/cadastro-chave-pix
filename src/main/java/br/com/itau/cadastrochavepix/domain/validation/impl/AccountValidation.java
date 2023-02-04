@@ -14,21 +14,21 @@ public class AccountValidation {
     }
 
     private boolean validateAccountType(String accountType) {
-        if (accountType != "CORRENTE" || accountType != "POUPANCA")
-            return false;
-        else
+        if (accountType.equals("CORRENTE") || accountType.equals("POUPANCA"))
             return true;
+        else
+            return false;
     }
 
     private boolean validateAgencyNumber(Integer agencyNumber) {
-        if (agencyNumber < 0 || agencyNumber > 4)
+        if (agencyNumber < 0 || agencyNumber > 9999)
             return false;
         else
             return true;
     }
 
     private boolean validateAccountNumber(Integer accountNumber) {
-        if (accountNumber < 0 || accountNumber > 8)
+        if (accountNumber < 0 || accountNumber > 99999999)
             return false;
         else
             return true;
