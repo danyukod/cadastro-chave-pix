@@ -4,6 +4,9 @@ import br.com.itau.cadastrochavepix.model.requests.PixKeyRequest;
 
 public class AccountValidation {
 
+    public static final String CONTA_CORRENTE = "CORRENTE";
+    public static final String CONTA_POUPANCA = "POUPANCA";
+
     public boolean accountValidate(PixKeyRequest pixKeyRequest) {
         if (pixKeyRequest == null) {
             return false;
@@ -14,7 +17,7 @@ public class AccountValidation {
     }
 
     private boolean validateAccountType(String accountType) {
-        if (accountType.equals("CORRENTE") || accountType.equals("POUPANCA"))
+        if (accountType.equals(CONTA_CORRENTE) || accountType.equals(CONTA_POUPANCA))
             return true;
         else
             return false;
