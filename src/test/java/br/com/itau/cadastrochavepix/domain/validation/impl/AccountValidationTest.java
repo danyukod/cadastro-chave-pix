@@ -11,6 +11,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class AccountValidationTest {
 
+    public static final String CONTA_CORRENTE = "CORRENTE";
+    private static final String CONTA_POUPANCA = "POUPANCA";
+    public static final String INVALID_ACCOUNT = "TESTE";
+    public static final int AGENCY_NUMBER = 1234;
+    public static final int ACCOUNT_NUMBER = 12345678;
+    public static final int INVALID_AGENCY_NUMBER = 12345;
+    public static final int INVALID_ACCOUNT_NUMBER = 123456789;
     private AccountValidation accountValidation;
 
 
@@ -22,20 +29,18 @@ class AccountValidationTest {
     @Test
     @DisplayName("Should return true when given valid account")
     void shouldReturnTrueWhenGivenValidAccout() {
-        PixKeyRequest pixKeyRequestWithValidAccount = createPixKeyRequest("CORRENTE",
-                1234, 12345678);
+        var pixKeyRequestWithValidAccountCorrente = createPixKeyRequest(CONTA_CORRENTE, AGENCY_NUMBER, ACCOUNT_NUMBER);
+        var pixKeyRequestWithValidAccountPoupanca = createPixKeyRequest(CONTA_POUPANCA, AGENCY_NUMBER, ACCOUNT_NUMBER);
 
-        assertTrue(accountValidation.accountValidate(pixKeyRequestWithValidAccount));
+        assertTrue(accountValidation.accountValidate(pixKeyRequestWithValidAccountCorrente));
+        assertTrue(accountValidation.accountValidate(pixKeyRequestWithValidAccountPoupanca));
     }
 
     @Test
     void shouldReturnFalseWhenGivenInvalidAccout() {
-        PixKeyRequest pixKeyRequestWithInvalidAccountType = createPixKeyRequest("TESTE",
-                1234, 12345678);
-        PixKeyRequest pixKeyRequestWithInvalidAgencyNumber = createPixKeyRequest("CORRENTE",
-                12345, 12345678);
-        PixKeyRequest pixKeyRequestWithInvalidAccountNumber = createPixKeyRequest("CORRENTE",
-                1234, 123456789);
+        var pixKeyRequestWithInvalidAccountType = createPixKeyRequest(INVALID_ACCOUNT, AGENCY_NUMBER, ACCOUNT_NUMBER);
+        var pixKeyRequestWithInvalidAgencyNumber = createPixKeyRequest(CONTA_CORRENTE, INVALID_AGENCY_NUMBER, ACCOUNT_NUMBER);
+        var pixKeyRequestWithInvalidAccountNumber = createPixKeyRequest(CONTA_CORRENTE, AGENCY_NUMBER, INVALID_ACCOUNT_NUMBER);
 
         assertFalse(accountValidation.accountValidate(pixKeyRequestWithInvalidAccountType));
         assertFalse(accountValidation.accountValidate(pixKeyRequestWithInvalidAgencyNumber));
