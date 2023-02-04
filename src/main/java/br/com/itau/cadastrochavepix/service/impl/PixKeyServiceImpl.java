@@ -1,8 +1,9 @@
 package br.com.itau.cadastrochavepix.service.impl;
 
-import br.com.itau.cadastrochavepix.domain.deletion.RegistrationDeletion;
 import br.com.itau.cadastrochavepix.domain.inclusion.RegistrationInclusion;
+import br.com.itau.cadastrochavepix.domain.inclusion.impl.DataBaseRegistrationInclusion;
 import br.com.itau.cadastrochavepix.domain.modification.RegistrationModification;
+import br.com.itau.cadastrochavepix.domain.modification.impl.DataBaseRegistrationModification;
 import br.com.itau.cadastrochavepix.model.requests.PixKeyDeletionRequest;
 import br.com.itau.cadastrochavepix.model.requests.PixKeyModificationRequest;
 import br.com.itau.cadastrochavepix.model.requests.PixKeyRegisterRequest;
@@ -13,30 +14,19 @@ import br.com.itau.cadastrochavepix.service.PixKeyService;
 
 public class PixKeyServiceImpl implements PixKeyService {
 
-
-    private RegistrationInclusion registrationInclusion;
-
-    private RegistrationModification registrationModification;
-
-    private RegistrationDeletion registrationDeletion;
-
-    public PixKeyServiceImpl(RegistrationInclusion registrationInclusion,
-                             RegistrationModification registrationModification,
-                             RegistrationDeletion registrationDeletion) {
-        this.registrationInclusion = registrationInclusion;
-        this.registrationModification = registrationModification;
-        this.registrationDeletion = registrationDeletion;
-    }
-
     @Override
     public PixKeyRegisterResponse registerPixKey(PixKeyRegisterRequest pixKeyRegisterRequest) {
         var validation = pixKeyRegisterRequest.pixKeyType().validateFactory();
 
         if (validation.pixKeyValidate(pixKeyRegisterRequest.pixKey())
                 && validation.accountValidate(pixKeyRegisterRequest))
-            return registrationInclusion.inclusion(pixKeyRegisterRequest);
+            return includesPixKey(pixKeyRegisterRequest, new DataBaseRegistrationInclusion());
         else
             throw new IllegalArgumentException("Register Pix Key Request is invalid");
+    }
+
+    private PixKeyRegisterResponse includesPixKey(PixKeyRegisterRequest pixKeyRegisterRequest, RegistrationInclusion registrationInclusion) {
+        return registrationInclusion.includes(pixKeyRegisterRequest);
     }
 
     @Override
@@ -45,9 +35,13 @@ public class PixKeyServiceImpl implements PixKeyService {
 
         if (validation.pixKeyValidate(pixKeyModificationRequest.pixKey())
                 && validation.accountValidate(pixKeyModificationRequest))
-            return registrationModification.modification(pixKeyModificationRequest);
+            return modifyPixKey(pixKeyModificationRequest, new DataBaseRegistrationModification());
         else
             throw new IllegalArgumentException("Register Pix Key Request is invalid");
+    }
+
+    private PixKeyModificationResponse modifyPixKey(PixKeyModificationRequest pixKeyRegisterRequest, RegistrationModification registrationModification) {
+        return registrationModification.modify(pixKeyRegisterRequest);
     }
 
     @Override

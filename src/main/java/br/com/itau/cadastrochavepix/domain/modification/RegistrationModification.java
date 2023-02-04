@@ -5,6 +5,6 @@ import br.com.itau.cadastrochavepix.model.responses.PixKeyModificationResponse;
 
 public interface RegistrationModification {
 
-    PixKeyModificationResponse modification(PixKeyModificationRequest pixKeyModificationRequest);
+    PixKeyModificationResponse modify(PixKeyModificationRequest pixKeyModificationRequest);
 
 }

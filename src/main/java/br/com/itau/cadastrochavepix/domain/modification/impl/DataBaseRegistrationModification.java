@@ -6,7 +6,7 @@ import br.com.itau.cadastrochavepix.model.responses.PixKeyModificationResponse;
 
 public class DataBaseRegistrationModification implements RegistrationModification {
     @Override
-    public PixKeyModificationResponse modification(PixKeyModificationRequest pixKeyModificationRequest) {
+    public PixKeyModificationResponse modify(PixKeyModificationRequest pixKeyModificationRequest) {
         return new PixKeyModificationResponse();
     }
 }

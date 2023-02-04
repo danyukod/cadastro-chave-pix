@@ -7,7 +7,7 @@ import br.com.itau.cadastrochavepix.model.responses.PixKeyRegisterResponse;
 public class DataBaseRegistrationInclusion implements RegistrationInclusion {
 
     @Override
-    public PixKeyRegisterResponse inclusion(PixKeyRegisterRequest request) {
+    public PixKeyRegisterResponse includes(PixKeyRegisterRequest request) {
         if (pixKeyDBValidation(request.pixKey()))
             return null;
         else
