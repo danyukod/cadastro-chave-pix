@@ -2,7 +2,6 @@ package br.com.itau.cadastrochavepix.domain.validation.impl;
 
 import br.com.itau.cadastrochavepix.domain.validation.RegistrationValidation;
 import br.com.itau.cadastrochavepix.domain.validation.utils.CnpjVerification;
-import br.com.itau.cadastrochavepix.model.requests.PixKeyRequest;
 
 import java.util.regex.Pattern;
 
@@ -11,15 +10,14 @@ public class CnpjValidate extends AccountValidation implements RegistrationValid
     private static Pattern regexPatternCNPJ = Pattern.compile("^\\d{1,14}");
 
     @Override
-    public boolean pixKeyValidate(PixKeyRequest pixKeyRequest) {
-        if (pixKeyRequest == null || pixKeyRequest.pixKey() == null) {
+    public boolean pixKeyValidate(String pixKey) {
+        if (pixKey == null) {
             return false;
         }
         var cnpjValidate = new CnpjVerification();
 
-        return cnpjValidate.isCNPJ(pixKeyRequest.pixKey())
-                && regexValidate(pixKeyRequest.pixKey())
-                && super.accountValidate(pixKeyRequest);
+        return cnpjValidate.isCNPJ(pixKey)
+                && regexValidate(pixKey);
     }
 
     private boolean regexValidate(String pixKey) {

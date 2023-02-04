@@ -4,6 +4,8 @@ import br.com.itau.cadastrochavepix.model.requests.PixKeyRequest;
 
 public interface RegistrationValidation {
 
-    boolean pixKeyValidate(PixKeyRequest pixKeyRequest);
+    boolean pixKeyValidate(String pixKey);
+
+    boolean accountValidate(PixKeyRequest pixKeyRequest);
 
 }

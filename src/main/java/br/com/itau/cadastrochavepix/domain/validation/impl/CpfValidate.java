@@ -11,15 +11,14 @@ public class CpfValidate extends AccountValidation implements RegistrationValida
     private static Pattern regexPatternCPF = Pattern.compile("^\\d{1,11}");
 
     @Override
-    public boolean pixKeyValidate(PixKeyRequest pixKeyRequest) {
-        if (pixKeyRequest == null || pixKeyRequest.pixKey() == null) {
+    public boolean pixKeyValidate(String pixKey) {
+        if (pixKey == null) {
             return false;
         }
         var cpfValite = new CpfVerification();
 
-        return cpfValite.isCPF(pixKeyRequest.pixKey())
-                && regexValidate(pixKeyRequest.pixKey())
-                && super.accountValidate(pixKeyRequest);
+        return cpfValite.isCPF(pixKey)
+                && regexValidate(pixKey);
     }
 
     private boolean regexValidate(String pixKey) {

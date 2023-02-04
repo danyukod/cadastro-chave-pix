@@ -1,7 +1,6 @@
 package br.com.itau.cadastrochavepix.domain.validation.impl;
 
 import br.com.itau.cadastrochavepix.domain.validation.RegistrationValidation;
-import br.com.itau.cadastrochavepix.model.requests.PixKeyRequest;
 
 public class EmailValidate extends AccountValidation implements RegistrationValidation {
 
@@ -11,13 +10,12 @@ public class EmailValidate extends AccountValidation implements RegistrationVali
 
 
     @Override
-    public boolean pixKeyValidate(PixKeyRequest pixKeyRequest) {
-        if (pixKeyRequest == null || pixKeyRequest.pixKey() == null) {
+    public boolean pixKeyValidate(String pixKey) {
+        if (pixKey == null) {
             return false;
         }
-        return pixKeyRequest.pixKey().matches(regexPatternEmail)
-                && verifyLength(pixKeyRequest.pixKey())
-                && super.accountValidate(pixKeyRequest);
+        return pixKey.matches(regexPatternEmail)
+                && verifyLength(pixKey);
     }
 
     private boolean verifyLength(String PixKey) {

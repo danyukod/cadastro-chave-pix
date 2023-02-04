@@ -32,7 +32,8 @@ public class PixKeyServiceImpl implements PixKeyService {
     public PixKeyRegisterResponse registerPixKey(PixKeyRegisterRequest pixKeyRegisterRequest) {
         var validation = pixKeyRegisterRequest.pixKeyType().validateFactory();
 
-        if (validation.pixKeyValidate(pixKeyRegisterRequest))
+        if (validation.pixKeyValidate(pixKeyRegisterRequest.pixKey())
+                && validation.accountValidate(pixKeyRegisterRequest))
             return registrationInclusion.inclusion(pixKeyRegisterRequest);
         else
             throw new IllegalArgumentException("Register Pix Key Request is invalid");
@@ -42,7 +43,8 @@ public class PixKeyServiceImpl implements PixKeyService {
     public PixKeyModificationResponse modificationPixKey(PixKeyModificationRequest pixKeyModificationRequest) {
         var validation = pixKeyModificationRequest.pixKeyType().validateFactory();
 
-        if (validation.pixKeyValidate(pixKeyModificationRequest))
+        if (validation.pixKeyValidate(pixKeyModificationRequest.pixKey())
+                && validation.accountValidate(pixKeyModificationRequest))
             return registrationModification.modification(pixKeyModificationRequest);
         else
             throw new IllegalArgumentException("Register Pix Key Request is invalid");
