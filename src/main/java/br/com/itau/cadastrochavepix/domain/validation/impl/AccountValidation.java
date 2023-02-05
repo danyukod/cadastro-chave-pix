@@ -1,14 +1,12 @@
 package br.com.itau.cadastrochavepix.domain.validation.impl;
 
+import br.com.itau.cadastrochavepix.model.enums.AccountType;
 import br.com.itau.cadastrochavepix.model.requests.PixKeyRequest;
 
 public class AccountValidation {
 
-    public static final String CONTA_CORRENTE = "CORRENTE";
-    public static final String CONTA_POUPANCA = "POUPANCA";
-
     public boolean accountValidate(PixKeyRequest pixKeyRequest) {
-        if (pixKeyRequest == null) {
+        if (pixKeyRequest == null || pixKeyRequest.accountType() == null) {
             return false;
         }
         return validateAccountType(pixKeyRequest.accountType())
@@ -16,8 +14,8 @@ public class AccountValidation {
                 && validateAccountNumber(pixKeyRequest.accountNumber());
     }
 
-    private boolean validateAccountType(String accountType) {
-        if (accountType.equals(CONTA_CORRENTE) || accountType.equals(CONTA_POUPANCA))
+    private boolean validateAccountType(AccountType accountType) {
+        if (accountType.equals(AccountType.CORRENTE) || accountType.equals(AccountType.POUPANCA))
             return true;
         else
             return false;
