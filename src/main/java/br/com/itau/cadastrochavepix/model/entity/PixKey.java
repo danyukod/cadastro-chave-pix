@@ -3,12 +3,15 @@ package br.com.itau.cadastrochavepix.model.entity;
 import br.com.itau.cadastrochavepix.model.enums.AccountType;
 import br.com.itau.cadastrochavepix.model.enums.PixKeyType;
 import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
+import lombok.Builder;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity(name = "pix_key")
+@Builder
+@Data
 public class PixKey {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -43,4 +46,7 @@ public class PixKey {
     @Column
     LocalDateTime modifiedAt;
 
+    public PixKey() {
+
+    }
 }

@@ -11,8 +11,14 @@ import br.com.itau.cadastrochavepix.model.responses.PixKeyDeletionResponse;
 import br.com.itau.cadastrochavepix.model.responses.PixKeyModificationResponse;
 import br.com.itau.cadastrochavepix.model.responses.PixKeyRegisterResponse;
 import br.com.itau.cadastrochavepix.service.PixKeyService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PixKeyServiceImpl implements PixKeyService {
+
+    @Autowired
+    private DataBaseRegistrationInclusion dataBaseRegistrationInclusion;
 
     @Override
     public PixKeyRegisterResponse registerPixKey(PixKeyRegisterRequest pixKeyRegisterRequest) {
@@ -20,7 +26,7 @@ public class PixKeyServiceImpl implements PixKeyService {
 
         if (validation.pixKeyValidate(pixKeyRegisterRequest.pixKey())
                 && validation.accountValidate(pixKeyRegisterRequest))
-            return includesPixKey(pixKeyRegisterRequest, new DataBaseRegistrationInclusion());
+            return includesPixKey(pixKeyRegisterRequest, dataBaseRegistrationInclusion);
         else
             throw new IllegalArgumentException("Register Pix Key Request is invalid");
     }

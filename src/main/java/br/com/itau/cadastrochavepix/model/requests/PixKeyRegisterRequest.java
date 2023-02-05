@@ -1,5 +1,6 @@
 package br.com.itau.cadastrochavepix.model.requests;
 
+import br.com.itau.cadastrochavepix.model.enums.AccountType;
 import br.com.itau.cadastrochavepix.model.enums.PixKeyType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -13,8 +14,8 @@ public record PixKeyRegisterRequest(
         PixKeyType pixKeyType,
         @NotBlank
         String pixKey,
-        @NotBlank
-        String accountType,
+        @NotNull
+        AccountType accountType,
         @NotNull
         Integer agencyNumber,
         @NotNull

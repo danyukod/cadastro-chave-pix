@@ -1,19 +1,24 @@
 package br.com.itau.cadastrochavepix.model.responses;
 
+import br.com.itau.cadastrochavepix.model.enums.AccountType;
 import br.com.itau.cadastrochavepix.model.enums.PixKeyType;
+import lombok.Builder;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
+@Builder
 public record PixKeyRegisterResponse(
-        String id,
+        UUID id,
         PixKeyType pixKeyType,
         String pixKey,
-        String pixAccountType,
+        AccountType accountType,
         Integer agencyNumber,
         Integer accountNumber,
         String accountHolderName,
         String accountHolderLastName,
-        Date createdAt
+        LocalDateTime createdAt
 ) {
+
 
 }
