@@ -5,7 +5,6 @@ import br.com.itau.cadastrochavepix.model.enums.PixKeyType;
 import java.util.Date;
 
 public record PixKeyRegisterResponse(
-
         String id,
         PixKeyType pixKeyType,
         String pixKey,
