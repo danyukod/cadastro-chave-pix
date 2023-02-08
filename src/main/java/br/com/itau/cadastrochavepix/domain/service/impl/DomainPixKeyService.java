@@ -11,11 +11,11 @@ import br.com.itau.cadastrochavepix.domain.modification.RegistrationModification
 import br.com.itau.cadastrochavepix.domain.modification.impl.DataBaseRegistrationModification;
 import br.com.itau.cadastrochavepix.domain.service.PixKeyService;
 
-public class PixKeyServiceImpl implements PixKeyService {
+public class DomainPixKeyService implements PixKeyService {
 
     private RegistrationInclusion registrationInclusion;
 
-    PixKeyServiceImpl(RegistrationInclusion registrationInclusion) {
+    public DomainPixKeyService(RegistrationInclusion registrationInclusion) {
         this.registrationInclusion = registrationInclusion;
     }
 
