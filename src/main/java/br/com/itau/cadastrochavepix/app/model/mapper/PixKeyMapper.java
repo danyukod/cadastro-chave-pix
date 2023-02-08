@@ -1,8 +1,8 @@
-package br.com.itau.cadastrochavepix.model.mapper;
+package br.com.itau.cadastrochavepix.app.model.mapper;
 
-import br.com.itau.cadastrochavepix.model.entity.PixKey;
-import br.com.itau.cadastrochavepix.model.requests.PixKeyRegisterRequest;
-import br.com.itau.cadastrochavepix.model.responses.PixKeyRegisterResponse;
+import br.com.itau.cadastrochavepix.app.model.requests.PixKeyRegisterRequest;
+import br.com.itau.cadastrochavepix.infra.entity.PixKey;
+import br.com.itau.cadastrochavepix.app.model.responses.PixKeyRegisterResponse;
 
 public class PixKeyMapper {
 

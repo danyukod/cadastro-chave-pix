@@ -2,7 +2,6 @@ package br.com.itau.cadastrochavepix.domain.validation.impl;
 
 import br.com.itau.cadastrochavepix.domain.validation.RegistrationValidation;
 import br.com.itau.cadastrochavepix.domain.validation.utils.CpfVerification;
-import br.com.itau.cadastrochavepix.model.requests.PixKeyRequest;
 
 import java.util.regex.Pattern;
 

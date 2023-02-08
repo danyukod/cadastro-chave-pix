@@ -1,7 +1,7 @@
 package br.com.itau.cadastrochavepix.domain.validation.impl;
 
-import br.com.itau.cadastrochavepix.model.enums.AccountType;
-import br.com.itau.cadastrochavepix.model.requests.PixKeyRequest;
+import br.com.itau.cadastrochavepix.app.model.enums.AccountType;
+import br.com.itau.cadastrochavepix.app.model.requests.PixKeyRequest;
 
 public class AccountValidation {
 

@@ -1,7 +1,7 @@
-package br.com.itau.cadastrochavepix.model.responses;
+package br.com.itau.cadastrochavepix.app.model.responses;
 
-import br.com.itau.cadastrochavepix.model.enums.AccountType;
-import br.com.itau.cadastrochavepix.model.enums.PixKeyType;
+import br.com.itau.cadastrochavepix.app.model.enums.AccountType;
+import br.com.itau.cadastrochavepix.app.model.enums.PixKeyType;
 import lombok.Builder;
 
 import java.time.LocalDateTime;

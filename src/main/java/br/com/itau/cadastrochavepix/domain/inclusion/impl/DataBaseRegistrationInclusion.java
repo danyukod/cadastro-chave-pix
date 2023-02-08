@@ -1,19 +1,20 @@
 package br.com.itau.cadastrochavepix.domain.inclusion.impl;
 
+import br.com.itau.cadastrochavepix.app.model.mapper.PixKeyMapper;
+import br.com.itau.cadastrochavepix.app.model.requests.PixKeyRegisterRequest;
+import br.com.itau.cadastrochavepix.app.model.responses.PixKeyRegisterResponse;
 import br.com.itau.cadastrochavepix.domain.inclusion.RegistrationInclusion;
-import br.com.itau.cadastrochavepix.model.entity.PixKey;
-import br.com.itau.cadastrochavepix.model.mapper.PixKeyMapper;
-import br.com.itau.cadastrochavepix.model.requests.PixKeyRegisterRequest;
-import br.com.itau.cadastrochavepix.model.responses.PixKeyRegisterResponse;
-import br.com.itau.cadastrochavepix.repository.PixKeyRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import br.com.itau.cadastrochavepix.infra.entity.PixKey;
+import br.com.itau.cadastrochavepix.infra.repository.PixKeyRepository;
 
-@Service
 public class DataBaseRegistrationInclusion implements RegistrationInclusion {
 
-    @Autowired
-    PixKeyRepository pixKeyRepository;
+    private final PixKeyRepository pixKeyRepository;
+
+    public DataBaseRegistrationInclusion(PixKeyRepository pixKeyRepository) {
+        this.pixKeyRepository = pixKeyRepository;
+    }
+
 
     @Override
     public PixKeyRegisterResponse includes(PixKeyRegisterRequest request) {

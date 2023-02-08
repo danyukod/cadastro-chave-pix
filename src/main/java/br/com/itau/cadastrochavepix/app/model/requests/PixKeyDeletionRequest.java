@@ -1,4 +1,4 @@
-package br.com.itau.cadastrochavepix.model.requests;
+package br.com.itau.cadastrochavepix.app.model.requests;
 
 import lombok.Getter;
 
