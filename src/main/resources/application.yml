@@ -3,13 +3,13 @@ spring:
     active: dev
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
   datasource:
     url: jdbc:mysql://localhost:3306/cadastro_chave_pix?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
     username: root
     password: root
-    driver-class-name: com.mysql.jdbc.Driver
   flyway:
-    enabled: false
-
+    url: jdbc:mysql://localhost:3306/cadastro_chave_pix?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
+    user: root
+    password: root

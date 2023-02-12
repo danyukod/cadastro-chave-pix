@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Builder
 public record PixKeyRegisterResponse(
-        UUID id,
+        String id,
         PixKeyType pixKeyType,
         String pixKey,
         AccountType accountType,

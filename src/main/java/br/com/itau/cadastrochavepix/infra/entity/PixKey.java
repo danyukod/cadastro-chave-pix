@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -18,8 +19,9 @@ import java.util.UUID;
 @NoArgsConstructor
 public class PixKey {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "uuid2")
+    private String id;
 
     @Column
     @Enumerated(EnumType.STRING)
@@ -45,7 +47,7 @@ public class PixKey {
     String accountHolderLastName;
 
     @Column
-    LocalDateTime createdAt = LocalDateTime.now();
+    LocalDateTime createdAt;
 
     @Column
     LocalDateTime modifiedAt;

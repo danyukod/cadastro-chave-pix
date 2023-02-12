@@ -4,6 +4,8 @@ import br.com.itau.cadastrochavepix.app.model.requests.PixKeyRegisterRequest;
 import br.com.itau.cadastrochavepix.infra.entity.PixKey;
 import br.com.itau.cadastrochavepix.app.model.responses.PixKeyRegisterResponse;
 
+import java.time.LocalDateTime;
+
 public class PixKeyMapper {
 
     public PixKey mapRegisterToPixKey(PixKeyRegisterRequest pixKeyRegisterRequest) {
@@ -17,6 +19,7 @@ public class PixKeyMapper {
                 .accountNumber(p.accountNumber())
                 .accountHolderName(p.accountHolderName())
                 .accountHolderLastName(p.accountHolderLastName())
+                .createdAt(LocalDateTime.now())
                 .build();
     }
 

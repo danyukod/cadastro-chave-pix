@@ -11,7 +11,5 @@ public interface PixKeyRepository extends JpaRepository<PixKey, UUID> {
 
     Boolean existsByPixKey(String pixKey);
 
-    Boolean countByPixKey(String pixKey);
-
     Long countByAgencyNumberAndAccountNumber(Integer agencyNumber, Integer accountNumber);
 }
