@@ -1,7 +1,7 @@
 package br.com.itau.cadastrochavepix.app.model.mapper;
 
 import br.com.itau.cadastrochavepix.app.model.requests.PixKeyRegisterRequest;
-import br.com.itau.cadastrochavepix.domain.entity.PixKey;
+import br.com.itau.cadastrochavepix.infra.entity.PixKey;
 import br.com.itau.cadastrochavepix.app.model.responses.PixKeyRegisterResponse;
 
 import java.time.LocalDateTime;

@@ -4,7 +4,7 @@ import br.com.itau.cadastrochavepix.app.model.mapper.PixKeyMapper;
 import br.com.itau.cadastrochavepix.app.model.requests.PixKeyRegisterRequest;
 import br.com.itau.cadastrochavepix.app.model.responses.PixKeyRegisterResponse;
 import br.com.itau.cadastrochavepix.domain.inclusion.RegistrationInclusion;
-import br.com.itau.cadastrochavepix.domain.entity.PixKey;
+import br.com.itau.cadastrochavepix.infra.entity.PixKey;
 import br.com.itau.cadastrochavepix.infra.repository.PixKeyRepository;
 
 public class DataBaseRegistrationInclusion implements RegistrationInclusion {
