@@ -1,22 +1,22 @@
-package br.com.itau.cadastrochavepix.infra.entity;
+package br.com.itau.cadastrochavepix.domain.entity;
 
 import br.com.itau.cadastrochavepix.app.model.enums.AccountType;
 import br.com.itau.cadastrochavepix.app.model.enums.PixKeyType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity(name = "pix_key")
 @Builder
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 public class PixKey {
     @Id
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
@@ -25,6 +25,7 @@ public class PixKey {
 
     @Column
     @Enumerated(EnumType.STRING)
+    @NotNull
     PixKeyType pixKeyType;
 
     @Column

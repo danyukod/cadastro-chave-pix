@@ -1,6 +1,6 @@
 package br.com.itau.cadastrochavepix.infra.repository;
 
-import br.com.itau.cadastrochavepix.infra.entity.PixKey;
+import br.com.itau.cadastrochavepix.domain.entity.PixKey;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
