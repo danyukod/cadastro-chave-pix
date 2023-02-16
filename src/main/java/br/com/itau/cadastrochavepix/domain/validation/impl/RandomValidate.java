@@ -4,7 +4,7 @@ import br.com.itau.cadastrochavepix.domain.validation.RegistrationValidation;
 
 import java.util.regex.Pattern;
 
-public class RandomValidate extends AccountValidation implements RegistrationValidation {
+public class RandomValidate implements RegistrationValidation {
 
     private static Pattern regexPatternPhoneNumber = Pattern.compile("^[a-zA-Z0-9]{36}$");
 

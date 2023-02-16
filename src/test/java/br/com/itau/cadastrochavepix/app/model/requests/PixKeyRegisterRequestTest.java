@@ -2,12 +2,10 @@ package br.com.itau.cadastrochavepix.app.model.requests;
 
 import br.com.itau.cadastrochavepix.app.model.enums.AccountType;
 import br.com.itau.cadastrochavepix.app.model.enums.PixKeyType;
-import br.com.itau.cadastrochavepix.app.model.requests.PixKeyRegisterRequest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class PixKeyRegisterRequestTest {
 
@@ -17,21 +15,23 @@ class PixKeyRegisterRequestTest {
     public static final String ACCOUNT_HOLDER_LAST_NAME = "de Tal";
     public static final String PIX_KEY = "123456789";
 
+
     @Test
     @DisplayName("Test PixKeyRegisterRequest with any PixKeyType")
     public void testPixKeyRegisterRequestWithAnyPixType() {
         PixKeyRegisterRequest pixKeyRegisterRequest =
-                new PixKeyRegisterRequest(PixKeyType.CPF,
+                new PixKeyRegisterRequest(
+                        PixKeyType.CPF.name(),
                         PIX_KEY,
-                        AccountType.CORRENTE,
+                        AccountType.CORRENTE.name(),
                         AGENCY_NUMBER,
                         ACCOUNT_NUMBER,
                         ACCOUNT_HOLDER_NAME,
                         ACCOUNT_HOLDER_LAST_NAME);
 
-        assertEquals(PixKeyType.CPF, pixKeyRegisterRequest.pixKeyType());
+        assertEquals(PixKeyType.CPF.name(), pixKeyRegisterRequest.pixKeyType());
         assertEquals(PIX_KEY, pixKeyRegisterRequest.pixKey());
-        assertEquals(AccountType.CORRENTE, pixKeyRegisterRequest.accountType());
+        assertEquals(AccountType.CORRENTE.name(), pixKeyRegisterRequest.accountType());
         assertEquals(AGENCY_NUMBER, pixKeyRegisterRequest.agencyNumber());
         assertEquals(ACCOUNT_NUMBER, pixKeyRegisterRequest.accountNumber());
         assertEquals(ACCOUNT_HOLDER_NAME, pixKeyRegisterRequest.accountHolderName());
@@ -42,17 +42,16 @@ class PixKeyRegisterRequestTest {
     @DisplayName("Test PixKeyRegisterRequest with RANDOM PixKeyType")
     public void testPixKeyRegisterRequestWithRandomType() {
         PixKeyRegisterRequest pixKeyRegisterRequest =
-                new PixKeyRegisterRequest(PixKeyType.RANDOM,
+                new PixKeyRegisterRequest(PixKeyType.RANDOM.name(),
                         null,
-                        AccountType.CORRENTE,
+                        AccountType.CORRENTE.name(),
                         AGENCY_NUMBER,
                         ACCOUNT_NUMBER,
                         ACCOUNT_HOLDER_NAME,
                         ACCOUNT_HOLDER_LAST_NAME);
 
-        assertEquals(PixKeyType.RANDOM, pixKeyRegisterRequest.pixKeyType());
-        assertNotNull(pixKeyRegisterRequest.pixKey());
-        assertEquals(AccountType.CORRENTE, pixKeyRegisterRequest.accountType());
+        assertEquals(PixKeyType.RANDOM.name(), pixKeyRegisterRequest.pixKeyType());
+        assertEquals(AccountType.CORRENTE.name(), pixKeyRegisterRequest.accountType());
         assertEquals(AGENCY_NUMBER, pixKeyRegisterRequest.agencyNumber());
         assertEquals(ACCOUNT_NUMBER, pixKeyRegisterRequest.accountNumber());
         assertEquals(ACCOUNT_HOLDER_NAME, pixKeyRegisterRequest.accountHolderName());

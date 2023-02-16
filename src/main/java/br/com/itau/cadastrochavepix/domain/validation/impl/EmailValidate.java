@@ -2,7 +2,7 @@ package br.com.itau.cadastrochavepix.domain.validation.impl;
 
 import br.com.itau.cadastrochavepix.domain.validation.RegistrationValidation;
 
-public class EmailValidate extends AccountValidation implements RegistrationValidation {
+public class EmailValidate implements RegistrationValidation {
 
     public static final int MIN_EMAIL_LENGTH = 3;
     public static final int MAX_EMAIL_LENGHT = 77;

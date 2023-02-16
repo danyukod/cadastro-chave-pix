@@ -1,4 +1,4 @@
-package br.com.itau.cadastrochavepix.domain.service;
+package br.com.itau.cadastrochavepix.app.service;
 
 import br.com.itau.cadastrochavepix.app.model.requests.PixKeyDeletionRequest;
 import br.com.itau.cadastrochavepix.app.model.requests.PixKeyModificationRequest;

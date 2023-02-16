@@ -5,8 +5,8 @@ import br.com.itau.cadastrochavepix.app.model.enums.PixKeyType;
 
 public record PixKeyModificationRequest(
         String pixKey,
-        PixKeyType pixKeyType,
-        AccountType accountType,
+        String pixKeyType,
+        String accountType,
         Integer agencyNumber,
         Integer accountNumber
 ) implements PixKeyRequest {

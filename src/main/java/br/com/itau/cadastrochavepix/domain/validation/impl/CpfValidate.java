@@ -5,7 +5,7 @@ import br.com.itau.cadastrochavepix.domain.validation.utils.CpfVerification;
 
 import java.util.regex.Pattern;
 
-public class CpfValidate extends AccountValidation implements RegistrationValidation {
+public class CpfValidate implements RegistrationValidation {
 
     private static Pattern regexPatternCPF = Pattern.compile("^\\d{1,11}");
 

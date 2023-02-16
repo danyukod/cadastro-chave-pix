@@ -2,7 +2,7 @@ package br.com.itau.cadastrochavepix.app.controller;
 
 import br.com.itau.cadastrochavepix.app.model.requests.PixKeyRegisterRequest;
 import br.com.itau.cadastrochavepix.app.model.responses.PixKeyRegisterResponse;
-import br.com.itau.cadastrochavepix.domain.service.PixKeyService;
+import br.com.itau.cadastrochavepix.app.service.PixKeyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -4,7 +4,7 @@ import br.com.itau.cadastrochavepix.domain.validation.RegistrationValidation;
 
 import java.util.regex.Pattern;
 
-public class PhoneValidate extends AccountValidation implements RegistrationValidation {
+public class PhoneValidate implements RegistrationValidation {
 
     private static Pattern regexPatternPhoneNumber = Pattern.compile("\\+((\\d{11,14}))");
 

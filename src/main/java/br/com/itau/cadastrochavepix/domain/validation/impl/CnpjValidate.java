@@ -5,7 +5,7 @@ import br.com.itau.cadastrochavepix.domain.validation.utils.CnpjVerification;
 
 import java.util.regex.Pattern;
 
-public class CnpjValidate extends AccountValidation implements RegistrationValidation {
+public class CnpjValidate implements RegistrationValidation {
 
     private static Pattern regexPatternCNPJ = Pattern.compile("^\\d{1,14}");
 

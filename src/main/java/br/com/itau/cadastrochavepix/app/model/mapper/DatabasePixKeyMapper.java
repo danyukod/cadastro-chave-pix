@@ -1,29 +1,28 @@
 package br.com.itau.cadastrochavepix.app.model.mapper;
 
-import br.com.itau.cadastrochavepix.app.model.requests.PixKeyRegisterRequest;
-import br.com.itau.cadastrochavepix.infra.entity.PixKey;
 import br.com.itau.cadastrochavepix.app.model.responses.PixKeyRegisterResponse;
+import br.com.itau.cadastrochavepix.domain.entity.PixKey;
 
 import java.time.LocalDateTime;
 
-public class PixKeyMapper {
+public class DatabasePixKeyMapper {
 
-    public PixKey mapRegisterToPixKey(PixKeyRegisterRequest pixKeyRegisterRequest) {
-        var p = pixKeyRegisterRequest;
+    public br.com.itau.cadastrochavepix.infra.entity.PixKey mapPixKeyToInfraPixKey(PixKey pixKey) {
+        var p = pixKey;
 
-        return PixKey.builder()
-                .pixKeyType(p.pixKeyType())
-                .pixKey(p.pixKey())
-                .accountType(p.accountType())
-                .agencyNumber(p.agencyNumber())
-                .accountNumber(p.accountNumber())
-                .accountHolderName(p.accountHolderName())
-                .accountHolderLastName(p.accountHolderLastName())
+        return br.com.itau.cadastrochavepix.infra.entity.PixKey.builder()
+                .pixKeyType(p.getPixKeyType())
+                .pixKey(p.getPixKey())
+                .accountType(p.getAccount().getAccountType())
+                .agencyNumber(p.getAccount().getNumber())
+                .accountNumber(p.getAccount().getNumber())
+                .accountHolderName(p.getAccount().getHolderName())
+                .accountHolderLastName(p.getAccount().getHolderLastName())
                 .createdAt(LocalDateTime.now())
                 .build();
     }
 
-    public PixKeyRegisterResponse mapPixKeyToRegisterResponse(PixKey pixKey) {
+    public PixKeyRegisterResponse mapPixKeyToRegisterResponse(br.com.itau.cadastrochavepix.infra.entity.PixKey pixKey) {
         return PixKeyRegisterResponse.builder()
                 .id(pixKey.getId())
                 .pixKeyType(pixKey.getPixKeyType())
