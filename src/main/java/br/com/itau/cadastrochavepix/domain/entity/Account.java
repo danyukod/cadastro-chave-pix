@@ -1,6 +1,6 @@
 package br.com.itau.cadastrochavepix.domain.entity;
 
-import br.com.itau.cadastrochavepix.app.model.enums.AccountType;
+import br.com.itau.cadastrochavepix.adapters.input.web.model.enums.AccountType;
 import lombok.Getter;
 
 @Getter

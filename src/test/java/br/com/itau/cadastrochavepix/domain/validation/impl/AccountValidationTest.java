@@ -1,6 +1,6 @@
 package br.com.itau.cadastrochavepix.domain.validation.impl;
 
-import br.com.itau.cadastrochavepix.app.model.enums.AccountType;
+import br.com.itau.cadastrochavepix.adapters.input.web.model.enums.AccountType;
 import br.com.itau.cadastrochavepix.domain.entity.Account;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
