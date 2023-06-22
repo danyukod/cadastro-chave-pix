@@ -4,7 +4,7 @@ import br.com.itau.cadastrochavepix.adapters.input.web.model.responses.PixKeyReg
 import br.com.itau.cadastrochavepix.adapters.output.database.entity.PixKeyEntity;
 import br.com.itau.cadastrochavepix.domain.entity.PixKey;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 public class DatabasePixKeyMapper {
 
@@ -19,7 +19,7 @@ public class DatabasePixKeyMapper {
                 .accountNumber(account.getNumber())
                 .accountHolderName(account.getHolderName())
                 .accountHolderLastName(account.getHolderLastName())
-                .createdAt(LocalDateTime.now())
+                .createdAt(Instant.now())
                 .build();
     }
 

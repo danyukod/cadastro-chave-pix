@@ -8,9 +8,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Entity(name = "pix_key")
 @Builder
@@ -18,6 +20,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 public class PixKeyEntity {
+
     @Id
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "uuid2")
@@ -47,10 +50,12 @@ public class PixKeyEntity {
     @Column
     String accountHolderLastName;
 
+    @CreationTimestamp
     @Column
-    LocalDateTime createdAt;
+    Instant createdAt;
 
+    @UpdateTimestamp
     @Column
-    LocalDateTime modifiedAt;
+    Instant modifiedAt;
 
 }

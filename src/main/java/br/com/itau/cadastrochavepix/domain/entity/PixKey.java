@@ -20,7 +20,7 @@ public class PixKey {
     }
 
     private boolean isRandom() {
-        return pixKeyType.equals(PixKeyType.RANDOM);
+        return pixKeyType.toString().equals(PixKeyType.RANDOM.toString());
     }
 
     private PixKeyType pixKeyType(String pixKeyType) {
@@ -43,11 +43,10 @@ public class PixKey {
     }
 
     private boolean validatePixKeyType(String pixKeyType) {
-        if (pixKeyType.equals(PixKeyType.CPF)
-                || pixKeyType.equals(PixKeyType.CNPJ)
-                || pixKeyType.equals(PixKeyType.PHONE)
-                || pixKeyType.equals(PixKeyType.EMAIL)
-                || pixKeyType.equals(PixKeyType.RANDOM))
+        if (pixKeyType.equals(PixKeyType.CPF.toString()) ||
+                pixKeyType.equals(PixKeyType.PHONE.toString()) ||
+                pixKeyType.equals(PixKeyType.EMAIL.toString()) ||
+                pixKeyType.equals(PixKeyType.RANDOM.toString()))
             return true;
         else
             return false;

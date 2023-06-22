@@ -4,10 +4,8 @@ import br.com.itau.cadastrochavepix.adapters.output.database.entity.PixKeyEntity
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.UUID;
-
 @Repository
-public interface PixKeyRepository extends JpaRepository<PixKeyEntity, UUID> {
+public interface PixKeyRepository extends JpaRepository<PixKeyEntity, String> {
 
     Boolean existsByPixKey(String pixKey);
 

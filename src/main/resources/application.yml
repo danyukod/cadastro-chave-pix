@@ -3,7 +3,7 @@ spring:
     active: dev
   jpa:
     hibernate:
-      ddl-auto: none
+        ddl-auto: none
     show-sql: true
   datasource:
     url: jdbc:mysql://localhost:3306/cadastro_chave_pix?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
@@ -13,6 +13,8 @@ spring:
     url: jdbc:mysql://localhost:3306/cadastro_chave_pix?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
     user: root
     password: root
+    create-schemas: true
+    enabled: true
   data:
     rest:
       base-path: /api/v1

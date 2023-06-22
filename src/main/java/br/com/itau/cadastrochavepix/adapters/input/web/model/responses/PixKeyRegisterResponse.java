@@ -4,7 +4,8 @@ import br.com.itau.cadastrochavepix.adapters.input.web.model.enums.AccountType;
 import br.com.itau.cadastrochavepix.adapters.input.web.model.enums.PixKeyType;
 import lombok.Builder;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
+import java.util.UUID;
 
 @Builder
 public record PixKeyRegisterResponse(
@@ -16,6 +17,6 @@ public record PixKeyRegisterResponse(
         Integer accountNumber,
         String accountHolderName,
         String accountHolderLastName,
-        LocalDateTime createdAt
+        Instant createdAt
 ) {
 }
