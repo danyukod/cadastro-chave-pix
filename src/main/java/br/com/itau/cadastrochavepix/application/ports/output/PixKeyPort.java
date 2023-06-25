@@ -1,4 +1,4 @@
-package br.com.itau.cadastrochavepix.domain.ports.output;
+package br.com.itau.cadastrochavepix.application.ports.output;
 
 import br.com.itau.cadastrochavepix.adapters.input.web.model.responses.PixKeyRegisterResponse;
 import br.com.itau.cadastrochavepix.domain.entity.PixKey;

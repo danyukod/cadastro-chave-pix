@@ -1,4 +1,4 @@
-package br.com.itau.cadastrochavepix.application.validation;
+package br.com.itau.cadastrochavepix.domain.entity.validation;
 
 public interface RegistrationValidation {
 

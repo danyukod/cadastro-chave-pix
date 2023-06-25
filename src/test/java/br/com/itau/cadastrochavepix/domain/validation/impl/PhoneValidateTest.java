@@ -1,6 +1,6 @@
 package br.com.itau.cadastrochavepix.domain.validation.impl;
 
-import br.com.itau.cadastrochavepix.application.validation.impl.PhoneValidate;
+import br.com.itau.cadastrochavepix.domain.entity.validation.impl.PhoneValidate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

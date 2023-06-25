@@ -1,4 +1,4 @@
-package br.com.itau.cadastrochavepix.application.validation.utils;
+package br.com.itau.cadastrochavepix.domain.entity.validation.utils;
 
 import java.util.InputMismatchException;
 

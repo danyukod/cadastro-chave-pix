@@ -2,43 +2,28 @@ package br.com.itau.cadastrochavepix.application;
 
 import br.com.itau.cadastrochavepix.adapters.input.web.model.requests.PixKeyRegisterRequest;
 import br.com.itau.cadastrochavepix.adapters.input.web.model.responses.PixKeyRegisterResponse;
-import br.com.itau.cadastrochavepix.domain.entity.Account;
-import br.com.itau.cadastrochavepix.domain.entity.Holder;
+import br.com.itau.cadastrochavepix.application.ports.input.RegisterPixKeyUsecase;
+import br.com.itau.cadastrochavepix.application.ports.output.PixKeyPort;
 import br.com.itau.cadastrochavepix.domain.entity.PixKey;
-import br.com.itau.cadastrochavepix.domain.ports.input.RegisterPixKeyUsecase;
-import br.com.itau.cadastrochavepix.domain.ports.output.PixKeyPort;
+import br.com.itau.cadastrochavepix.domain.services.DomainService;
 
 public class RegisterPixKeyService implements RegisterPixKeyUsecase {
 
     PixKeyPort pixKeyPort;
 
-    public RegisterPixKeyService(PixKeyPort pixKeyPort) {
+    DomainService<PixKey, PixKeyRegisterRequest> pixKeyService;
+
+    public RegisterPixKeyService(PixKeyPort pixKeyPort, DomainService domainService) {
         this.pixKeyPort = pixKeyPort;
+        this.pixKeyService = domainService;
     }
 
     public PixKeyRegisterResponse execute(PixKeyRegisterRequest pixKeyRegisterRequest) {
-        PixKey pixKey = createPixKey(pixKeyRegisterRequest);
+        PixKey pixKey = pixKeyService.create(pixKeyRegisterRequest);
 
         validate(pixKey);
 
         return includesPixKey(pixKey, pixKeyPort);
-    }
-
-    private PixKey createPixKey(PixKeyRegisterRequest pixKeyRegisterRequest) {
-        Account account = createAccount(pixKeyRegisterRequest);
-
-        return new PixKey(pixKeyRegisterRequest.pixKeyType(),
-                pixKeyRegisterRequest.pixKey(),
-                account);
-    }
-
-    private Account createAccount(PixKeyRegisterRequest pixKeyRegisterRequest) {
-        var holder = new Holder(pixKeyRegisterRequest.accountHolderName(),
-                pixKeyRegisterRequest.accountHolderLastName());
-        return new Account(pixKeyRegisterRequest.accountType(),
-                pixKeyRegisterRequest.accountNumber(),
-                pixKeyRegisterRequest.agencyNumber(),
-                holder);
     }
 
     private PixKeyRegisterResponse includesPixKey(PixKey pixKey, PixKeyPort pixKeyPort) {

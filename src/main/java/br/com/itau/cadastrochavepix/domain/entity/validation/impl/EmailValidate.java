@@ -1,6 +1,6 @@
-package br.com.itau.cadastrochavepix.application.validation.impl;
+package br.com.itau.cadastrochavepix.domain.entity.validation.impl;
 
-import br.com.itau.cadastrochavepix.application.validation.RegistrationValidation;
+import br.com.itau.cadastrochavepix.domain.entity.validation.RegistrationValidation;
 
 public class EmailValidate implements RegistrationValidation {
 

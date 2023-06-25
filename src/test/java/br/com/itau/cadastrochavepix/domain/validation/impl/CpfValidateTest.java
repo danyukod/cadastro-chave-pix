@@ -1,6 +1,6 @@
 package br.com.itau.cadastrochavepix.domain.validation.impl;
 
-import br.com.itau.cadastrochavepix.application.validation.impl.CpfValidate;
+import br.com.itau.cadastrochavepix.domain.entity.validation.impl.CpfValidate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
