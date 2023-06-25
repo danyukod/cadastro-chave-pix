@@ -11,15 +11,15 @@ public class RegisterPixKeyService implements RegisterPixKeyUsecase {
 
     PixKeyPort pixKeyPort;
 
-    DomainService<PixKey, PixKeyRegisterRequest> pixKeyService;
+    DomainService<PixKey, PixKeyRegisterRequest> domainService;
 
     public RegisterPixKeyService(PixKeyPort pixKeyPort, DomainService domainService) {
         this.pixKeyPort = pixKeyPort;
-        this.pixKeyService = domainService;
+        this.domainService = domainService;
     }
 
     public PixKeyRegisterResponse execute(PixKeyRegisterRequest pixKeyRegisterRequest) {
-        PixKey pixKey = pixKeyService.create(pixKeyRegisterRequest);
+        var pixKey = domainService.create(pixKeyRegisterRequest);
 
         validate(pixKey);
 

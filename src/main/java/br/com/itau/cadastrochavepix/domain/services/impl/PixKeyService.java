@@ -7,15 +7,15 @@ import br.com.itau.cadastrochavepix.domain.services.DomainService;
 
 public class PixKeyService implements DomainService<PixKey, PixKeyRegisterRequest> {
 
-    private DomainService<Account, PixKeyRegisterRequest> accountService;
+    private DomainService<Account, PixKeyRegisterRequest> domainService;
 
     public PixKeyService(DomainService domainService) {
-        this.accountService = domainService;
+        this.domainService = domainService;
     }
 
     @Override
     public PixKey create(PixKeyRegisterRequest pixKeyRegisterRequest) {
-        Account account = accountService.create(pixKeyRegisterRequest);
+        var account = domainService.create(pixKeyRegisterRequest);
 
         return new PixKey(pixKeyRegisterRequest.pixKeyType(),
                 pixKeyRegisterRequest.pixKey(),
