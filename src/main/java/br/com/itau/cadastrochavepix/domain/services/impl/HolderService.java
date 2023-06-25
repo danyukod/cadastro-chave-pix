@@ -1,6 +1,6 @@
 package br.com.itau.cadastrochavepix.domain.services.impl;
 
-import br.com.itau.cadastrochavepix.adapters.input.web.model.requests.PixKeyRegisterRequest;
+import br.com.itau.cadastrochavepix.adapters.input.web.model.request.PixKeyRegisterRequest;
 import br.com.itau.cadastrochavepix.domain.entity.Holder;
 import br.com.itau.cadastrochavepix.domain.services.DomainService;
 

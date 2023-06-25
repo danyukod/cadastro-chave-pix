@@ -1,4 +1,4 @@
-package br.com.itau.cadastrochavepix.adapters.input.web.model.requests;
+package br.com.itau.cadastrochavepix.adapters.input.web.model.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

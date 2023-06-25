@@ -1,6 +1,6 @@
-package br.com.itau.cadastrochavepix.adapters.input.web.model.mapper;
+package br.com.itau.cadastrochavepix.adapters.output.database.model.mapper;
 
-import br.com.itau.cadastrochavepix.adapters.input.web.model.responses.PixKeyRegisterResponse;
+import br.com.itau.cadastrochavepix.adapters.input.web.model.response.PixKeyRegisterResponse;
 import br.com.itau.cadastrochavepix.adapters.output.database.entity.PixKeyEntity;
 import br.com.itau.cadastrochavepix.domain.entity.PixKey;
 
@@ -10,6 +10,7 @@ public class DatabasePixKeyMapper {
 
     public PixKeyEntity mapPixKeyToInfraPixKey(PixKey pixKey) {
         var account = pixKey.getAccount();
+        var holder = account.getHolder();
 
         return PixKeyEntity.builder()
                 .pixKeyType(pixKey.getPixKeyType())
@@ -17,8 +18,8 @@ public class DatabasePixKeyMapper {
                 .accountType(account.getAccountType())
                 .agencyNumber(account.getNumber())
                 .accountNumber(account.getNumber())
-                .accountHolderName(account.getHolderName())
-                .accountHolderLastName(account.getHolderLastName())
+                .accountHolderName(holder.getName())
+                .accountHolderLastName(holder.getLastName())
                 .createdAt(Instant.now())
                 .build();
     }

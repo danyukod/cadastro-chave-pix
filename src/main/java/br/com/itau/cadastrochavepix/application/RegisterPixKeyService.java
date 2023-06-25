@@ -1,7 +1,7 @@
 package br.com.itau.cadastrochavepix.application;
 
-import br.com.itau.cadastrochavepix.adapters.input.web.model.requests.PixKeyRegisterRequest;
-import br.com.itau.cadastrochavepix.adapters.input.web.model.responses.PixKeyRegisterResponse;
+import br.com.itau.cadastrochavepix.adapters.input.web.model.request.PixKeyRegisterRequest;
+import br.com.itau.cadastrochavepix.adapters.input.web.model.response.PixKeyRegisterResponse;
 import br.com.itau.cadastrochavepix.application.ports.input.RegisterPixKeyUsecase;
 import br.com.itau.cadastrochavepix.application.ports.output.PixKeyPort;
 import br.com.itau.cadastrochavepix.domain.entity.PixKey;

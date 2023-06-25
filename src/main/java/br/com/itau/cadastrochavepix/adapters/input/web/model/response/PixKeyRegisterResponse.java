@@ -1,4 +1,4 @@
-package br.com.itau.cadastrochavepix.adapters.input.web.model.responses;
+package br.com.itau.cadastrochavepix.adapters.input.web.model.response;
 
 import br.com.itau.cadastrochavepix.domain.entity.enums.AccountType;
 import br.com.itau.cadastrochavepix.domain.entity.enums.PixKeyType;

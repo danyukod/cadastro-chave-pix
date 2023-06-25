@@ -1,7 +1,7 @@
 package br.com.itau.cadastrochavepix.infra.config;
 
-import br.com.itau.cadastrochavepix.adapters.input.web.model.mapper.DatabasePixKeyMapper;
-import br.com.itau.cadastrochavepix.adapters.input.web.model.requests.PixKeyRegisterRequest;
+import br.com.itau.cadastrochavepix.adapters.output.database.model.mapper.DatabasePixKeyMapper;
+import br.com.itau.cadastrochavepix.adapters.input.web.model.request.PixKeyRegisterRequest;
 import br.com.itau.cadastrochavepix.adapters.output.database.PixKeyDatabase;
 import br.com.itau.cadastrochavepix.adapters.output.database.repository.PixKeyRepository;
 import br.com.itau.cadastrochavepix.application.RegisterPixKeyService;
