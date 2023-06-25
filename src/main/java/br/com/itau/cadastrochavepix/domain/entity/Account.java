@@ -1,6 +1,6 @@
 package br.com.itau.cadastrochavepix.domain.entity;
 
-import br.com.itau.cadastrochavepix.adapters.input.web.model.enums.AccountType;
+import br.com.itau.cadastrochavepix.domain.entity.enums.AccountType;
 import lombok.Getter;
 
 @Getter
@@ -12,16 +12,13 @@ public class Account {
 
     Integer agency;
 
-    String holderName;
+    Holder holder;
 
-    String holderLastName;
-
-    public Account(String accountType, Integer number, Integer agency, String holderName, String holderLastName) {
+    public Account(String accountType, Integer number, Integer agency, Holder holder) {
         this.accountType = accountType(accountType);
         this.number = number(number);
         this.agency = agency(agency);
-        this.holderName = holderName;
-        this.holderLastName = holderLastName;
+        this.holder = holder;
     }
 
     private AccountType accountType(String accountType) {
@@ -45,12 +42,6 @@ public class Account {
             throw new IllegalArgumentException("Número da agência inválido");
     }
 
-    private String holderName(String holderName) {
-        if (validateHolderName(holderName))
-            return holderName;
-        else
-            throw new IllegalArgumentException("Nome do titular inválido");
-    }
 
     private boolean validateAccountType(String accountType) {
         if (accountType.equals(AccountType.CORRENTE.name()) || accountType.equals(AccountType.POUPANCA.name()))
@@ -73,11 +64,5 @@ public class Account {
             return true;
     }
 
-    private boolean validateHolderName(String holderName) {
-        if (holderName.length() < 3 || holderName.length() > 50)
-            return false;
-        else
-            return true;
-    }
 
 }

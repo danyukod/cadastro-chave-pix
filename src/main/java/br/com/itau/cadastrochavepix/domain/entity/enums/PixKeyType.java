@@ -1,4 +1,4 @@
-package br.com.itau.cadastrochavepix.adapters.input.web.model.enums;
+package br.com.itau.cadastrochavepix.domain.entity.enums;
 
 import br.com.itau.cadastrochavepix.application.validation.RegistrationValidation;
 import br.com.itau.cadastrochavepix.application.validation.impl.*;

@@ -1,6 +1,6 @@
 package br.com.itau.cadastrochavepix.domain.entity;
 
-import br.com.itau.cadastrochavepix.adapters.input.web.model.enums.PixKeyType;
+import br.com.itau.cadastrochavepix.domain.entity.enums.PixKeyType;
 import lombok.Getter;
 
 import java.util.Random;

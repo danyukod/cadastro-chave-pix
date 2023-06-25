@@ -1,7 +1,8 @@
 package br.com.itau.cadastrochavepix.domain.validation.impl;
 
-import br.com.itau.cadastrochavepix.adapters.input.web.model.enums.AccountType;
 import br.com.itau.cadastrochavepix.domain.entity.Account;
+import br.com.itau.cadastrochavepix.domain.entity.Holder;
+import br.com.itau.cadastrochavepix.domain.entity.enums.AccountType;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,7 +27,8 @@ class AccountValidationTest {
     }
 
     private Account createAccount(String accountType, Integer number, Integer agency, String holderName, String holderLastName) {
-        return new Account(accountType, number, agency, holderName, holderLastName);
+        var holder = new Holder(holderName, holderLastName);
+        return new Account(accountType, number, agency, holder);
     }
 
 }
