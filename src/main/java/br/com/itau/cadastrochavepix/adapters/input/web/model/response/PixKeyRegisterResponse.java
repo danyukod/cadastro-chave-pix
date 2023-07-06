@@ -1,7 +1,7 @@
 package br.com.itau.cadastrochavepix.adapters.input.web.model.response;
 
-import br.com.itau.cadastrochavepix.domain.entity.enums.AccountType;
-import br.com.itau.cadastrochavepix.domain.entity.enums.PixKeyType;
+import br.com.itau.cadastrochavepix.domain.enums.AccountType;
+import br.com.itau.cadastrochavepix.domain.enums.PixKeyType;
 import lombok.Builder;
 
 import java.time.Instant;

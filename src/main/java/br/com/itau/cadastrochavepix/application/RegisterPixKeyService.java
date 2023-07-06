@@ -4,7 +4,7 @@ import br.com.itau.cadastrochavepix.adapters.input.web.model.request.PixKeyRegis
 import br.com.itau.cadastrochavepix.adapters.input.web.model.response.PixKeyRegisterResponse;
 import br.com.itau.cadastrochavepix.application.ports.input.RegisterPixKeyUsecase;
 import br.com.itau.cadastrochavepix.application.ports.output.PixKeyPort;
-import br.com.itau.cadastrochavepix.domain.entity.PixKey;
+import br.com.itau.cadastrochavepix.domain.PixKey;
 import br.com.itau.cadastrochavepix.domain.services.DomainService;
 
 public class RegisterPixKeyService implements RegisterPixKeyUsecase {

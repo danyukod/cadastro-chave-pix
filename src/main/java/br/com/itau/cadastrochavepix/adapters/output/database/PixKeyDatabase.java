@@ -2,7 +2,7 @@ package br.com.itau.cadastrochavepix.adapters.output.database;
 
 import br.com.itau.cadastrochavepix.adapters.output.database.model.mapper.DatabasePixKeyMapper;
 import br.com.itau.cadastrochavepix.adapters.input.web.model.response.PixKeyRegisterResponse;
-import br.com.itau.cadastrochavepix.domain.entity.PixKey;
+import br.com.itau.cadastrochavepix.domain.PixKey;
 import br.com.itau.cadastrochavepix.application.ports.output.PixKeyPort;
 import br.com.itau.cadastrochavepix.adapters.output.database.repository.PixKeyRepository;
 

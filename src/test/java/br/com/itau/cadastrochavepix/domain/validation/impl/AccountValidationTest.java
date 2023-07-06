@@ -1,8 +1,8 @@
 package br.com.itau.cadastrochavepix.domain.validation.impl;
 
-import br.com.itau.cadastrochavepix.domain.entity.Account;
-import br.com.itau.cadastrochavepix.domain.entity.Holder;
-import br.com.itau.cadastrochavepix.domain.entity.enums.AccountType;
+import br.com.itau.cadastrochavepix.domain.Account;
+import br.com.itau.cadastrochavepix.domain.Holder;
+import br.com.itau.cadastrochavepix.domain.enums.AccountType;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,17 +16,17 @@ class AccountValidationTest {
     @Test
     @DisplayName("Should return true when given valid account")
     void shouldReturnTrueWhenGivenValidAccout() {
-        var validAccountPoupanca = createAccount(AccountType.POUPANCA.name(), NUMBER, AGENCY, "Joao", "Silva");
+        var validAccountPoupanca = createAccount(AccountType.POUPANCA, NUMBER, AGENCY, "Joao", "Silva");
     }
 
     @Test
     @Disabled
     void shouldReturnFalseWhenGivenInvalidAccout() {
-        var invalidAgencyNumber = createAccount(AccountType.CORRENTE.name(), NUMBER, INVALID_AGENCY, "Joao", "Silva");
-        var invalidAccountNumber = createAccount(AccountType.CORRENTE.name(), INVALID_NUMBER, AGENCY, "Joao", "Silva");
+        var invalidAgencyNumber = createAccount(AccountType.CORRENTE, NUMBER, INVALID_AGENCY, "Joao", "Silva");
+        var invalidAccountNumber = createAccount(AccountType.CORRENTE, INVALID_NUMBER, AGENCY, "Joao", "Silva");
     }
 
-    private Account createAccount(String accountType, Integer number, Integer agency, String holderName, String holderLastName) {
+    private Account createAccount(AccountType accountType, Integer number, Integer agency, String holderName, String holderLastName) {
         var holder = new Holder(holderName, holderLastName);
         return new Account(accountType, number, agency, holder);
     }

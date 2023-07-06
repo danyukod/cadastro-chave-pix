@@ -1,7 +1,7 @@
 package br.com.itau.cadastrochavepix.application.ports.output;
 
 import br.com.itau.cadastrochavepix.adapters.input.web.model.response.PixKeyRegisterResponse;
-import br.com.itau.cadastrochavepix.domain.entity.PixKey;
+import br.com.itau.cadastrochavepix.domain.PixKey;
 
 public interface PixKeyPort {
     PixKeyRegisterResponse save(PixKey pixKey);

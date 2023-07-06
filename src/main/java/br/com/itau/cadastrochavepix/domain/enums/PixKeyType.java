@@ -1,7 +1,7 @@
-package br.com.itau.cadastrochavepix.domain.entity.enums;
+package br.com.itau.cadastrochavepix.domain.enums;
 
-import br.com.itau.cadastrochavepix.domain.entity.validation.RegistrationValidation;
-import br.com.itau.cadastrochavepix.domain.entity.validation.impl.*;
+import br.com.itau.cadastrochavepix.domain.validation.RegistrationValidation;
+import br.com.itau.cadastrochavepix.domain.validation.impl.*;
 
 public enum PixKeyType {
     //Strategy pattern && Factory pattern
@@ -35,6 +35,17 @@ public enum PixKeyType {
             return new RandomValidate();
         }
     };
+
+    public static PixKeyType getPixKeyTypeFromString(String type) {
+        return switch (type.toUpperCase()) {
+            case "CPF" -> CPF;
+            case "CNPJ" -> CNPJ;
+            case "PHONE" -> PHONE;
+            case "EMAIL" -> EMAIL;
+            case "RANDOM" -> RANDOM;
+            default -> throw new IllegalArgumentException("Tipo de chave inválido");
+        };
+    }
 
     public abstract RegistrationValidation validateFactory();
 

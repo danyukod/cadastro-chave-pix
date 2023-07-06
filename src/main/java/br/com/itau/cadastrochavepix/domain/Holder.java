@@ -1,4 +1,4 @@
-package br.com.itau.cadastrochavepix.domain.entity;
+package br.com.itau.cadastrochavepix.domain;
 
 import lombok.Getter;
 
@@ -9,14 +9,13 @@ public class Holder {
     String lastName;
 
     public Holder(String name, String lastName) {
-        this.name = name(name);
+        this.name = name;
         this.lastName = lastName;
+        validate();
     }
 
-    private String name(String name) {
-        if (validateName(name))
-            return name;
-        else
+    private void validate() {
+        if (!validateName(this.name))
             throw new IllegalArgumentException("Nome do titular inválido");
     }
 

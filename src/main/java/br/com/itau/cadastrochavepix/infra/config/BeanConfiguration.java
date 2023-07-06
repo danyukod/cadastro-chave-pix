@@ -7,9 +7,9 @@ import br.com.itau.cadastrochavepix.adapters.output.database.repository.PixKeyRe
 import br.com.itau.cadastrochavepix.application.RegisterPixKeyService;
 import br.com.itau.cadastrochavepix.application.ports.input.RegisterPixKeyUsecase;
 import br.com.itau.cadastrochavepix.application.ports.output.PixKeyPort;
-import br.com.itau.cadastrochavepix.domain.entity.Account;
-import br.com.itau.cadastrochavepix.domain.entity.Holder;
-import br.com.itau.cadastrochavepix.domain.entity.PixKey;
+import br.com.itau.cadastrochavepix.domain.Account;
+import br.com.itau.cadastrochavepix.domain.Holder;
+import br.com.itau.cadastrochavepix.domain.PixKey;
 import br.com.itau.cadastrochavepix.domain.services.DomainService;
 import br.com.itau.cadastrochavepix.domain.services.impl.AccountService;
 import br.com.itau.cadastrochavepix.domain.services.impl.HolderService;

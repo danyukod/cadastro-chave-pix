@@ -1,7 +1,7 @@
 package br.com.itau.cadastrochavepix.adapters.output.database.entity;
 
-import br.com.itau.cadastrochavepix.domain.entity.enums.AccountType;
-import br.com.itau.cadastrochavepix.domain.entity.enums.PixKeyType;
+import br.com.itau.cadastrochavepix.domain.enums.AccountType;
+import br.com.itau.cadastrochavepix.domain.enums.PixKeyType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

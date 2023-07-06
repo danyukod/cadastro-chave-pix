@@ -1,6 +1,6 @@
-package br.com.itau.cadastrochavepix.domain.entity;
+package br.com.itau.cadastrochavepix.domain;
 
-import br.com.itau.cadastrochavepix.domain.entity.enums.PixKeyType;
+import br.com.itau.cadastrochavepix.domain.enums.PixKeyType;
 import lombok.Getter;
 
 import java.util.Random;
@@ -13,21 +13,14 @@ public class PixKey {
     private String pixKey;
     private Account account;
 
-    public PixKey(String pixKeyType, String pixKey, Account account) {
-        this.pixKeyType = pixKeyType(pixKeyType);
+    public PixKey(PixKeyType pixKeyType, String pixKey, Account account) {
+        this.pixKeyType = pixKeyType;
         this.pixKey = isRandom() ? pixKey(generateRandomKey(), this.pixKeyType) : pixKey(pixKey, this.pixKeyType);
         this.account = account;
     }
 
     private boolean isRandom() {
         return pixKeyType.toString().equals(PixKeyType.RANDOM.toString());
-    }
-
-    private PixKeyType pixKeyType(String pixKeyType) {
-        if (validatePixKeyType(pixKeyType))
-            return PixKeyType.valueOf(pixKeyType);
-        else
-            throw new IllegalArgumentException("Tipo de chave inválido");
     }
 
     private String pixKey(String pixKey, PixKeyType pixKeyType) {
@@ -40,16 +33,6 @@ public class PixKey {
     private boolean validatePixKey(String pixKey, PixKeyType pixKeyType) {
         var validation = pixKeyType.validateFactory();
         return validation.pixKeyValidate(pixKey);
-    }
-
-    private boolean validatePixKeyType(String pixKeyType) {
-        if (pixKeyType.equals(PixKeyType.CPF.toString()) ||
-                pixKeyType.equals(PixKeyType.PHONE.toString()) ||
-                pixKeyType.equals(PixKeyType.EMAIL.toString()) ||
-                pixKeyType.equals(PixKeyType.RANDOM.toString()))
-            return true;
-        else
-            return false;
     }
 
     private String generateRandomKey() {

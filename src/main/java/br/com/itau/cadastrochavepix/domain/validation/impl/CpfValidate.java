@@ -1,7 +1,7 @@
-package br.com.itau.cadastrochavepix.domain.entity.validation.impl;
+package br.com.itau.cadastrochavepix.domain.validation.impl;
 
-import br.com.itau.cadastrochavepix.domain.entity.validation.RegistrationValidation;
-import br.com.itau.cadastrochavepix.domain.entity.validation.utils.CpfVerification;
+import br.com.itau.cadastrochavepix.domain.validation.RegistrationValidation;
+import br.com.itau.cadastrochavepix.domain.validation.utils.CpfVerification;
 
 import java.util.regex.Pattern;
 

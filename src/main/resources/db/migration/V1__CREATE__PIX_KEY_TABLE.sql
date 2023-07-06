@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS `pix_key` (
     `pix_key_type` varchar(255) NOT NULL,
     `pix_key` varchar(255) NOT NULL,
     `account_type` varchar(255) NOT NULL,
-    `agency_number` TINYINT NOT NULL,
+    `agency_number` INT NOT NULL,
     `account_number` INT NOT NULL,
     `account_holder_name` varchar(255) NOT NULL,
     `account_holder_last_name` varchar(255) NOT NULL,

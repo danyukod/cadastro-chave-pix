@@ -1,7 +1,7 @@
 package br.com.itau.cadastrochavepix.app.model.requests;
 
-import br.com.itau.cadastrochavepix.domain.entity.enums.AccountType;
-import br.com.itau.cadastrochavepix.domain.entity.enums.PixKeyType;
+import br.com.itau.cadastrochavepix.domain.enums.AccountType;
+import br.com.itau.cadastrochavepix.domain.enums.PixKeyType;
 import br.com.itau.cadastrochavepix.adapters.input.web.model.request.PixKeyRegisterRequest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
