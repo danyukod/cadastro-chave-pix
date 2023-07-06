@@ -15,24 +15,23 @@ public class PixKey {
 
     public PixKey(PixKeyType pixKeyType, String pixKey, Account account) {
         this.pixKeyType = pixKeyType;
-        this.pixKey = isRandom() ? pixKey(generateRandomKey(), this.pixKeyType) : pixKey(pixKey, this.pixKeyType);
+        this.pixKey = isRandom() ? generateRandomKey() : pixKey;
         this.account = account;
+        validate();
     }
 
-    private boolean isRandom() {
-        return pixKeyType.toString().equals(PixKeyType.RANDOM.toString());
-    }
-
-    private String pixKey(String pixKey, PixKeyType pixKeyType) {
-        if (validatePixKey(pixKey, pixKeyType))
-            return pixKey;
-        else
+    private void validate() {
+        if (!validatePixKey(this.pixKey, this.pixKeyType))
             throw new IllegalArgumentException("Chave inválida");
     }
 
     private boolean validatePixKey(String pixKey, PixKeyType pixKeyType) {
         var validation = pixKeyType.validateFactory();
         return validation.pixKeyValidate(pixKey);
+    }
+
+    private boolean isRandom() {
+        return pixKeyType.toString().equals(PixKeyType.RANDOM.toString());
     }
 
     private String generateRandomKey() {
